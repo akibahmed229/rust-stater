@@ -1,4 +1,4 @@
-fn tuple(){
+pub fn tuple(){
     /*
      * Tuples are like structured containers that hold multiple values of different types. 
      * They are created using parentheses and can hold any number of elements.
@@ -13,7 +13,7 @@ fn tuple(){
     println!("Tuple: {} {} {}", x, y, z);
 }
 
-fn my_vectors () {
+pub fn my_vectors () {
     /*
      * Vectors in Rust are dynamic, growable arrays that allow you to store multiple values of the same type in contiguous memory.
      * They provide flexibility by automatically handling memory allocation and deallocation, allowing them to resize dynamically 
@@ -63,7 +63,7 @@ fn my_vectors () {
     println!("Pop: {:?}", vec2.pop());
 }
 
-fn my_enums () {
+pub fn my_enums () {
     /*
      * Enums in Rust provide a way to define a custom data type by enumerating its possible variants. 
      * Each variant can hold different types of data or no data at all. 

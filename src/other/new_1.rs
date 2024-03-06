@@ -1,4 +1,9 @@
-fn basic() {
+use std::mem::size_of;
+use std::io; // (::) is used to bring a module into scope
+// import other libraries
+use rand::Rng; // import the Rng trait from the rand crate (external library)
+
+pub fn basic() {
     // taking input from user
     println!("What is your name?");
     let mut name:String = String::new();

@@ -1,3 +1,5 @@
+use std::ops::Add; // allow us to perform addition with generics
+
 // Function to print the sum of two integers
 fn get_sum(x: i32, y: i32) {
     println!("{} + {} : {}", x, y, x + y);
@@ -6,7 +8,7 @@ fn get_sum(x: i32, y: i32) {
 // Function to calculate the sum and difference of two integers and return them as a tuple
 fn get_sum_2(x: i32, y: i32) -> (i32, i32) {
     // Return a tuple containing the sum and difference of x and y
-    return (x + y, x - y);
+    (x + y, x - y)
 }
 
 // Function to calculate the sum of elements in a vector
@@ -17,11 +19,11 @@ fn sum_list(list: &Vec<i32>) -> i32 {
     for &val in list.iter() {
         sum += &val; // Dereference val to access its value
     }
-    return sum; // Return the sum of the elements
+    sum // Return the sum of the elements
 }
 
 // Main function to demonstrate the usage of the above functions
-fn my_function() {
+pub fn my_function() {
     // Call get_sum function to print the sum of two integers
     get_sum(12, 4);
 
@@ -41,11 +43,11 @@ fn my_function() {
 // The `Output = T` associated type constraint specifies that the output type of the addition operation should be of type `T`
 fn get_sum_gen<T: Add<Output = T>>(x: T, y: T) -> T {
     // Perform addition of the two generic values and return the result
-    return x + y;
+    x + y
 }
 
 // Define a function `my_generics` to demonstrate the usage of generics
-fn my_generics() {
+pub fn my_generics() {
     // Call `get_sum_gen` with integer arguments and print the result
     println!("Get sum using generics: {}", get_sum_gen(6, 11));
 

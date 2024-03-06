@@ -29,17 +29,17 @@ fn print_str(str: String) {
 // Define a function `print_return_str` that takes ownership of a `String`, prints it, and returns it
 fn print_return_str(str: String) -> String {
     println!("A string {}", str);
-    return str;
+    str
 }
 
 // Define a function `change_str` that takes a mutable reference to a `String`, modifies it, and returns a new `String`
 fn change_str(str: &mut String) -> String {
     str.push_str(" is happy");
-    return str.to_string();
+    str.to_string()
 }
 
 // Define a function `my_ownership` to demonstrate ownership and borrowing in Rust
-fn my_ownership() {
+pub fn my_ownership() {
     // Create a new `String` str1
     let str1: String = String::from("Akib");
 

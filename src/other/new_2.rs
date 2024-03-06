@@ -1,4 +1,6 @@
-fn condition() {
+use std::cmp::Ordering; 
+
+pub fn condition() {
     // conditonal statement
     let age:i8 = 122;
     if (age >= 1) && (age <= 18) {
@@ -20,7 +22,7 @@ fn condition() {
 
 }
 
-fn my_match(){
+pub fn my_match(){
     /*
      * The match expression in Rust allows you to compare a value against a series of patterns and execute code based on which pattern matches. 
      * It's similar to a switch or case statement found in other programming languages, but offers more flexibility and safety. 

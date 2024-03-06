@@ -2,36 +2,33 @@
 
 // Import the io library from the standard library
 use std::io; // (::) is used to bring a module into scope
-use std::mem::size_of;
 use std::io::{Write, BufReader, BufRead, ErrorKind};
 use std::fs::File;
-use std::cmp::Ordering; 
-use std::ops::Add; // allow us to perform addition with generics
 
-// import other libraries
-use rand::Rng; // import the Rng trait from the rand crate (external library)
 
-// importing file
-include!("../src/other/new_1.rs");
-include!("../src/other/new_2.rs");
-include!("../src/other/new_3.rs");
-include!("../src/other/new_4.rs");
-include!("../src/other/new_5.rs");
-include!("../src/other/new_6.rs");
-include!("../src/other/new_7.rs");
+// Import files from the other directory
+mod other {
+    pub mod new_1;
+    pub mod new_2;
+    pub mod new_3;
+    pub mod new_4;
+    pub mod new_5;
+    pub mod new_6;
+    pub mod new_7;
+}
 
 fn main() {
-    // basic();
-    // condition(); 
-    // my_match();
-    // array_loop();
-    // tuple();
-    // my_string();
-    // my_enums();
-    // my_vectors();
-    // my_function(); 
-    // my_generics();
-
-    my_ownership();
+    // other::new_1::basic();
+    // other::new_2::condition(); 
+    // other::new_2::my_match();
+    // other::new_3::array_loop();
+    // other::new_4::my_string();
+    other::new_4::advance_string();
+    // other::new_7::tuple();
+    // other::new_7::my_enums();
+    // other::new_7::my_vectors();
+    // other::new_5::my_function(); 
+    // other::new_5::my_generics();
+    // other::new_6::my_ownership();
 }
 

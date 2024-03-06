@@ -1,4 +1,4 @@
-fn my_string(){
+pub fn my_string(){
     // two types of string in rust
     // 1. String (growable, heap-allocated data structure) use vector to store UTF-8 encoded text
     // 2. &str (string slice, a reference(point) to a string)
@@ -55,3 +55,6 @@ fn my_string(){
     println!("casting value of int1 and int2 is: {}", int3_u32);
 }
 
+pub fn advance_string () {
+    
+}

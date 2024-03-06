@@ -1,4 +1,4 @@
-fn array_loop(){
+pub fn array_loop(){
     // Array and Loop
     let mut arr: [i32; 5] = [10, 20, 30, 40, 50]; 
     println!("Array: {:?}", arr); // the :? is a debug trait that prints the array in a debug format
