@@ -1,3 +1,5 @@
+use std::collections::HashMap;
+
 pub fn tuple(){
     /*
      * Tuples are like structured containers that hold multiple values of different types. 
@@ -63,50 +65,35 @@ pub fn my_vectors () {
     println!("Pop: {:?}", vec2.pop());
 }
 
-pub fn my_enums () {
-    /*
-     * Enums in Rust provide a way to define a custom data type by enumerating its possible variants. 
-     * Each variant can hold different types of data or no data at all. 
-     * Enums are versatile and commonly used for representing and handling different states or options within a program. 
-     * They offer pattern matching and associated data, allowing for expressive and type-safe code. 
-     * Enums are a powerful tool for modeling domain-specific concepts and facilitating structured programming in Rust.
-     */
+pub fn my_hashmap() {
+    // A HashMap in Rust is like a dictionary or a map in other programming languages. It stores key-value pairs, where each key must be unique. 
 
-    // In Rust, an enum (short for "enumeration") is a custom data type that allows you to define a type by enumerating its possible variants. Each variant of an enum can hold different types of data or no data at all.
-    enum Day {
-        Saturday,
-        Sunday,
-        Monday,
-        Tuesday,
-        Wednesday,
-        Thursday,
-        Friday
+    // Create a new empty HashMap with keys and values of type &str
+    let mut names: HashMap<&str, &str> = HashMap::new();
+
+    // Insert key-value pairs into the HashMap
+    names.insert("Akib", "love rust");
+    names.insert("Atoshi", "love python");
+    names.insert("Yeanur", "love java");
+
+    // Iterate over key-value pairs in the HashMap and print them
+    for (key, value) in names.iter() {
+        println!("{} = {}", key, value);
     }
 
-    // The impl block in Rust is used for implementing methods associated with a particular type. 
-    impl Day {
-        fn is_weekend(&self) -> bool {
-            match self {
-                Day::Saturday | Day::Sunday => true,
-                _ => false
-            }
+    // Print the length of the HashMap
+    println!("Length of names: {}", names.len());
+
+    // Check if a key exists in the HashMap
+    if names.contains_key(&"Akib") {
+        // Get the value associated with the key "Akib"
+        let the_name = names.get(&"Akib");
+
+        // Match the result of getting the value
+        match the_name {
+            Some(value) => println!("Akib {}", value),
+            None => println!("Not Found!!!"),
         }
     }
-
-    // Here, today is assigned the value Day::Sunday, indicating that today is Sunday.
-    let today:Day = Day::Sunday;
-
-    match today {
-        Day::Saturday => println!("Weekend"),
-        Day::Sunday => println!("Weekend"),
-        Day::Monday => println!("Every one hate Monday"),
-        Day::Tuesday => println!("Donut Day"),
-        Day::Wednesday => println!("Hump Day"),
-        Day::Thursday => println!("Pay Day"),
-        Day::Tuesday => println!("Donut day"),
-        Day::Friday => println!("Almost Weekend"),
-    }
-
-    println!("Is today the Weekend: {}", today.is_weekend());
 }
 

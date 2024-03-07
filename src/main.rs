@@ -15,6 +15,7 @@ mod other {
     pub mod new_5;
     pub mod new_6;
     pub mod new_7;
+    pub mod new_8;
 }
 
 fn main() {
@@ -30,5 +31,8 @@ fn main() {
     // other::new_5::my_function(); 
     // other::new_5::my_generics();
     // other::new_6::my_ownership();
+    // other::new_7::my_hashmap();
+    other::new_8::my_struct();
+    other::new_8::trait_with_struct();
 }
 
