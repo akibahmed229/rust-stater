@@ -21,6 +21,8 @@ mod tutorial {
     pub mod new_11;
     pub mod new_12;
     pub mod new_13;
+    pub mod new_14;
+    pub mod new_15;
 }
 
 // new_9 to show how to use modules
@@ -47,5 +49,7 @@ fn main() {
     // tutorial::new_11::my_iterator();
     // tutorial::new_11::your_closure();
     // tutorial::new_12::my_box();
-    tutorial::new_13::my_thread();
+    //  tutorial::new_13::my_thread();
+    // tutorial::new_14::my_declarative_macro();
+    tutorial::new_15::my_lifetime();
 }
